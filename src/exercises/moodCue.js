@@ -8,7 +8,7 @@ const doExercise = () => {
   board.on('ready', function() {
     console.log('Ready!');
 
-    const servo = new five.Servo({ pin: 9, range: [0, 180] });
+    const servo = new five.Servo({ pin: 9, range: [0, 179] });
     const inputPin = new five.Pin({ pin: 'A0', mode: five.Pin.INPUT });
 
     temporal.loop(500, function() {
