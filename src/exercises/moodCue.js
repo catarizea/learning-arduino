@@ -1,5 +1,6 @@
 import five from 'johnny-five';
 import temporal from 'temporal';
+import { mapValueToInterval } from '../utils/helpers';
 
 const doExercise = () => {
   const board = new five.Board();
@@ -12,9 +13,7 @@ const doExercise = () => {
 
     temporal.loop(500, function() {
       inputPin.query(state => {
-        // map from [0, 1024] to [0, 180]
-        const value = Math.floor(state.value / 5.68);
-
+        const value = parseInt(mapValueToInterval(state.value, [0, 1023], [0, 179]), 10);
         console.log(`Angle: ${value}`);
         servo.to(value);
       });
