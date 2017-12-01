@@ -1,6 +1,7 @@
 import five from 'johnny-five';
 import temporal from 'temporal';
 import rgbHex from 'rgb-hex';
+import { mapValueToInterval } from '../utils/helpers';
 
 const doExercise = () => {
   const board = new five.Board();
@@ -25,7 +26,7 @@ const doExercise = () => {
     temporal.loop(10, function() {
       inputPins.forEach((pin, key) => {
         pin.query(state => {
-          const value = Math.ceil(state.value / 4);
+          const value = parseInt(mapValueToInterval(state.value, [0, 1023], [0, 255]), 10);
           colors[key].value = value;
         });
       });
