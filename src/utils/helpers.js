@@ -1,5 +1,5 @@
 import five from 'johnny-five';
-import { forOwn} from 'lodash';
+import { forOwn, sortBy } from 'lodash';
 
 export const mapValueToInterval = (value, fromArr, toArr) => {
   return (value - fromArr[0]) / (fromArr[1] - fromArr[0]) * (toArr[1] - toArr[0]) + toArr[0];
@@ -8,7 +8,7 @@ export const mapValueToInterval = (value, fromArr, toArr) => {
 export const getPiezoFrequency = (inputValue, inputArr) => {
   const notes = five.Piezo.Notes;
   const toArr = [99999, 0];
-  const noteValues = [];
+  let noteValues = [];
 
   forOwn(notes, note => {
     if (note <= toArr[0]) {
@@ -19,6 +19,8 @@ export const getPiezoFrequency = (inputValue, inputArr) => {
     }
     noteValues.push(note);
   });
+
+  noteValues = sortBy(noteValues);
 
   const inputValueMapped = parseInt(mapValueToInterval(inputValue, inputArr, toArr), 10);
   let frequency = noteValues[0];
