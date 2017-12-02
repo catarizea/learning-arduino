@@ -3,6 +3,7 @@ import ex2 from './exercises/spaceShipInterface';
 import ex3 from './exercises/loveOMeter';
 import ex4 from './exercises/colorMixingLamp';
 import ex5 from './exercises/moodCue';
+import ex6 from './exercises/lightTheremin';
 
 const currentExercise = process.argv[2] || 'ex1';
 
@@ -12,6 +13,7 @@ const exercises = {
   ex3,
   ex4,
   ex5,
+  ex6,
 };
 
 exercises[currentExercise]();

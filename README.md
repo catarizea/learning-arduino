@@ -1,6 +1,6 @@
 # Learning Arduino by using Johnny-Five
 
-Exercises from "The Genuino Projects Book" part of "The Genuino Starter Kit", using Johnny-Five "The JavaScript Robotics & IoT Platform".
+Exercises from "The Genuino Projects Book" part of ["The Genuino Starter Kit"], using [Johnny-Five "The JavaScript Robotics & IoT Platform"].
 
 - [Install Node.js]
 
@@ -18,5 +18,7 @@ $ yarn
 $ yarn run start ex1
 ```
 
+["The Genuino Starter Kit"]: https://store.arduino.cc/genuino-starter-kit
+[Johnny-Five "The JavaScript Robotics & IoT Platform"]: http://johnny-five.io/
 [Install Node.js]: https://nodejs.org/en/
 [Install Yarn]: https://yarnpkg.com/en/
