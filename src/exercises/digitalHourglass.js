@@ -32,7 +32,7 @@ const doExercise = () => {
 
     const cycle = 1000;
 
-    // adjust here time here now is at 10 seconds
+    // adjust time unit here. now is at 10 seconds
     const timeUnit = 10 * cycle;
 
     let timePassed = 0;
