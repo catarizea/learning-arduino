@@ -51,7 +51,14 @@ const doExercise = () => {
         } else {
           if (timePassed && timePassed >= timeUnit
             && timePassed % timeUnit === 0) {
-            turnOnLeds(timePassed / timeUnit);
+            const howMany = timePassed / timeUnit;
+            if (howMany <= outputPins.length) {
+              turnOnLeds(howMany);
+            } else {
+              turnOffLeds();
+              timePassed = timeUnit;
+              turnOnLeds(1);
+            }
           }
           timePassed += cycle;
         }
