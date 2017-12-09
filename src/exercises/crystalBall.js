@@ -33,6 +33,7 @@ const doExercise = () => {
 
     const cycle = 2000;
     let answerKey = randomInt(7);
+    let currentSwitchState = null;
 
     temporal.loop(cycle, () => {
       tiltSwitchPin.query(state => {
@@ -40,10 +41,17 @@ const doExercise = () => {
 
         if (!state.value) {
           answerKey = randomInt(7);
-        } else {
+          currentSwitchState = 0;
           lcd.clear();
-          lcd.cursor(0, 0).print('The ball says:');
-          lcd.cursor(1, 0).print(answers[answerKey]);
+        } else {
+          if (!currentSwitchState) {
+            if (currentSwitchState === null) {
+              lcd.clear();
+            }
+            lcd.cursor(0, 0).print('The ball says:');
+            lcd.cursor(1, 0).print(answers[answerKey]);
+            currentSwitchState = 1;
+          }
         }
 
       });
