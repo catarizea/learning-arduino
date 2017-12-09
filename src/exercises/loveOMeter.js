@@ -7,9 +7,9 @@ const doExercise = () => {
     console.log('Ready!');
 
     const outputPins = [
-      new five.Pin({ pin: 2, mode: 1 }),
-      new five.Pin({ pin: 3, mode: 1 }),
-      new five.Pin({ pin: 4, mode: 1 }),
+      new five.Pin({ pin: 2, mode: five.Pin.OUTPUT }),
+      new five.Pin({ pin: 3, mode: five.Pin.OUTPUT }),
+      new five.Pin({ pin: 4, mode: five.Pin.OUTPUT }),
     ];
 
     const switchPins = arr => {

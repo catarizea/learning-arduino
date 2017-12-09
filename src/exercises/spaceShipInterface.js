@@ -7,12 +7,12 @@ const doExercise = () => {
   board.on('ready', function() {
     console.log('Ready!');
 
-    const inputPin = new five.Pin({ pin: 2, mode: 0 });
+    const inputPin = new five.Pin({ pin: 2, mode: five.Pin.INPUT });
 
     const outputPins = [
-      new five.Pin({ pin: 3, mode: 1 }),
-      new five.Pin({ pin: 4, mode: 1 }),
-      new five.Pin({ pin: 5, mode: 1 }),
+      new five.Pin({ pin: 3, mode: five.Pin.OUTPUT }),
+      new five.Pin({ pin: 4, mode: five.Pin.OUTPUT }),
+      new five.Pin({ pin: 5, mode: five.Pin.OUTPUT }),
     ];
 
     let iter = 0;
